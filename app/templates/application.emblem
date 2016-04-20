@@ -1,2 +1,24 @@
-h2 id="title" Welcome to Ember
-== outlet
+paper-nav-container
+  paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="sm"
+    paper-toolbar
+      .md-toolbar-tools
+        .logo
+          strong Menu
+    paper-content
+      paper-list
+        /paper-item action="transitionTo" param="index" Introduction
+        paper-item
+          span Introduction
+        paper-item
+          span AnotherLink
+  div layout="column" tabindex="-1" role="main" flex='flex'
+    paper-toolbar
+      .md-toolbar-tools
+        paper-sidenav-toggle as |toggle|
+          paper-button target=toggle action="toggleMenu" icon-button=true
+            paper-icon "menu"
+        span.md-breadcrumb-page Title
+
+    paper-content class="md-padding"
+      h1 My content
+      == outlet

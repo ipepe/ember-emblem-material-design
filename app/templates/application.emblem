@@ -21,4 +21,5 @@ paper-nav-container
 
     paper-content class="md-padding"
       h1 My content
+      == render 'todos'
       == outlet
